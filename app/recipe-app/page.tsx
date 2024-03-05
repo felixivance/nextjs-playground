@@ -9,6 +9,12 @@ const RecipePage = () => {
 
     const [ recipeList, setRecipeList ] = useState<Recipe[]>(recipes)
 
+    const [ newRecipeModal, setNewRecipeModal ] = useState(false)
+    const [ title, setTitle ] = useState('')
+    const [ description, setDescription ] = useState('')
+    const [ image, setImage ] = useState('')
+    const [ ingredients, setIngredients ] = useState('')
+
     const search = () =>{
         const filteredRecipes = recipes.filter((recipe: Recipe) => 
             [recipe.title, recipe.description, ...recipe.ingredients].some((text)=> {
@@ -29,14 +35,31 @@ const RecipePage = () => {
         }
     }
 
+    const addNewRecipe = () => {
+        const newRecipe = {
+            title,
+            description,
+            image,
+            ingredients: ingredients.split(',')
+        }
+        setRecipeList([...recipeList, newRecipe])
+        setNewRecipeModal(false)
+    }
+
+
     return (
-        <div className='flex min-h-screen flex-col items-center justify-between p-24 space-y-6'>
-            <div className='flex'>
-                <input type="text" placeholder='search...' className='p-2 border-2 border-r-0 border-gray-300 rounded-md w-96 rounded-r-none'
-                onKeyDown={onKeyDown}
-                value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)} />
-                <button className='bg-slate-200 text-black p-2 rounded-l-none rounded-md'
-                onClick={search}>search</button>
+        <div className='flex min-h-screen flex-col justify-between p-24 space-y-6'>
+            <div className='grid grid-cols-1 md:flex justify-between items-center'>
+                <div className='flex items-center'>
+                    <input type="text" placeholder='search...' className='p-2 border-2 border-r-0 border-gray-300 h-10 rounded-md w-96 rounded-r-none'
+                    onKeyDown={onKeyDown}
+                    value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)} />
+                    <button className='bg-slate-200 text-black p-2 rounded-l-none rounded-md h-10'
+                    onClick={search}>search</button>
+                </div>
+                <div>
+                    <button onClick={()=>setNewRecipeModal(!newRecipeModal)} className='bg-blue-200 text-black p-2 rounded-md'>Add New </button>
+                </div>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                 {
@@ -45,6 +68,31 @@ const RecipePage = () => {
                     ))
                 }
             </div>
+
+            {/* modal */}
+            {
+                newRecipeModal && (
+                    <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center'>
+                        <div className='bg-white p-8 rounded-md'>
+                            <h2 className='text-center'>Add New Recipe</h2>
+                            <form className='flex flex-col gap-3'>
+                                <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} 
+                                placeholder='title' className='p-2 border-2 border-gray-300 rounded-md' />
+
+                                <input type="text" value={description} onChange={(e)=>setDescription(e.target.value)}
+                                 placeholder='description' className='p-2 border-2 border-gray-300 rounded-md' />
+
+                                <input type="text" value={image } onChange={(e)=>setImage(e.target.value)}
+                                placeholder='image url' className='p-2 border-2 border-gray-300 rounded-md' />
+
+                                <input type="text" value={ingredients} placeholder='ingredients' onChange={(e)=>setIngredients(e.target.value)}
+                                 className='p-2 border-2 border-gray-300 rounded-md' />
+                                <button type='button' onClick={addNewRecipe} className='bg-blue-200 text-black p-2 rounded-md'>Add</button>
+                            </form>
+                        </div>
+                    </div>
+                )
+            }
             
         </div>
     )
