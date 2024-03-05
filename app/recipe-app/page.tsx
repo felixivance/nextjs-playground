@@ -15,6 +15,8 @@ const RecipePage = () => {
     const [ image, setImage ] = useState('')
     const [ ingredients, setIngredients ] = useState('')
 
+    const [ activeRecipe, setActiveRecipe ] = useState<number>(-1)
+
     const search = () =>{
         const filteredRecipes = recipes.filter((recipe: Recipe) => 
             [recipe.title, recipe.description, ...recipe.ingredients].some((text)=> {
@@ -64,7 +66,13 @@ const RecipePage = () => {
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
                 {
                     recipeList.map((recipe, index) => (
-                        <RecipeComponent title={recipe.title} description={recipe.description} image={recipe.image} ingredients={recipe.ingredients} key={index}  />
+                        <div className='cursor-pointer' 
+                            onClick={()=> activeRecipe ===index ? setActiveRecipe(-1) : setActiveRecipe(index)} 
+                            key={index}>
+                            <RecipeComponent title={recipe.title} description={recipe.description} 
+                            image={recipe.image} ingredients={recipe.ingredients}  activeState={activeRecipe ==index}
+                             />
+                        </div>
                     ))
                 }
             </div>
