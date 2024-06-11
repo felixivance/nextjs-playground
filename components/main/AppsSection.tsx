@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -17,8 +18,9 @@ const AppsSection = (props: Props) => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
             <div className="relative overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1661749711934-492cd19a25c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+              <Image
+                //   https://images.unsplash.com/photo-1661749711934-492cd19a25c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80
+                src="/snake-game.png"
                 alt="art cover"
                 loading="lazy"
                 width="1000"
@@ -59,7 +61,7 @@ const AppsSection = (props: Props) => {
                 Simple NextJs Application with Crud functionality on json and
                 typescript
               </p>
-              <a className="inline-block" href="#">
+              <a className="inline-block" href="/recipe-app">
                 <span className="text-home_primary dark:text-blue-300">
                   View App
                 </span>

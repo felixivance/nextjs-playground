@@ -26,7 +26,7 @@ const HeroSection = () => {
             </p>
             <div className="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
               <a
-                href="#"
+                href="https://felixrunye.com"
                 className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-home_primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
               >
                 <span className="relative text-base font-semibold text-white">
@@ -34,11 +34,11 @@ const HeroSection = () => {
                 </span>
               </a>
               <a
-                href="#"
+                href="https://github.com/felixivance/nextjs-playground"
                 className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
               >
                 <span className="relative text-base font-semibold text-primary dark:text-white">
-                  Learn more
+                  Github
                 </span>
               </a>
             </div>
