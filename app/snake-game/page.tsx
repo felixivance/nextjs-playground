@@ -96,6 +96,7 @@ const SnakeGame = () => {
   }, []);
 
   const handleKeyPress = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (isGameOver) return;
     if (event.key === "ArrowUp" && direction != "DOWN") setDirection("UP");
     if (event.key === "ArrowDown" && direction != "UP") setDirection("DOWN");
     if (event.key === "ArrowLeft" && direction !== "RIGHT")
