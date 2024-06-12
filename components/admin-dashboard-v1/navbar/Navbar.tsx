@@ -7,6 +7,14 @@ import {
   AvatarImage,
   AvatarFallback,
 } from "../../../components/ui/avatar";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 type Props = {};
 
@@ -17,9 +25,24 @@ const Navbar = (props: Props) => {
         <Image src={Logo} alt="my-logo" width={100} />
       </Link>
 
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
-      </Avatar>
+      <DropdownMenu>
+        <DropdownMenuTrigger className="focus:outline-none">
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
+            <AvatarFallback className="text-black">N/A</AvatarFallback>
+          </Avatar>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <Link href="/profile">Profile</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/auth">Logout</Link>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 };
