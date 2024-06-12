@@ -44,7 +44,7 @@ const AppsSection = (props: Props) => {
           </div>
           <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
             <div className="relative overflow-hidden rounded-xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1491895200222-0fc4a4c35e18?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
                 alt="art cover"
                 loading="lazy"
