@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LucideIcon, Newspaper } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 type Props = {
   title: string;
