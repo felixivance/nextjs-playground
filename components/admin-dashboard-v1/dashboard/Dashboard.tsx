@@ -27,6 +27,7 @@ const Dashboard = (props: Props) => {
         count={1200}
         icon={<MessageCircle className="text-slate-500" size={72} />}
       />
+      {/* other sections */}
     </div>
   );
 };
