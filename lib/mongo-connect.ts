@@ -12,3 +12,5 @@ const connectMongoDB = async()=> {
         throw new Error("Error while connecting");
     }
 }
+
+export default connectMongoDB;

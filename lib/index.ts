@@ -6,4 +6,11 @@ type Recipe = {
     activeState?: boolean
 }
 
-export  type {Recipe}
+interface Todo {
+    id: number
+    title: string
+    description: string
+    done: boolean
+  }
+
+export  type {Recipe, Todo}
