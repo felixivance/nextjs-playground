@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -61,17 +62,18 @@ const AppsSection = (props: Props) => {
                 Simple NextJs Application with Crud functionality on json and
                 typescript
               </p>
-              <a className="inline-block" href="/recipe-app">
+              <Link className="inline-block" href="/recipe-app">
                 <span className="text-home_primary dark:text-blue-300">
                   View App
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
-          {/* <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+          <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
             <div className="relative overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+              <Image
+                // src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+                src="/todo-app.png"
                 alt="art cover"
                 loading="lazy"
                 width="1000"
@@ -81,17 +83,19 @@ const AppsSection = (props: Props) => {
             </div>
             <div className="mt-6 relative">
               <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
-                De fuga fugiat lorem ispum laboriosam expedita.
+                Todo App
               </h3>
               <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300">
-                Voluptates harum aliquam totam, doloribus eum impedit atque!
-                Temporibus...
+                NextJs application, with zustand state management, zod for form
+                validation, shadcn for UI with tailwind
               </p>
-              <a className="inline-block" href="#">
-                <span className="text-info dark:text-blue-300">Read more</span>
-              </a>
+              <Link className="inline-block" href="/todo-app">
+                <span className="text-home_primary dark:text-blue-300">
+                  View App
+                </span>
+              </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
