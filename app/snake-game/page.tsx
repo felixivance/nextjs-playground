@@ -11,10 +11,11 @@ type Point = {
 
 type Direction = "UP" | "DOWN" | "LEFT" | "RIGHT";
 
-export const meta = {
-  title: "Snake Game",
-  description: "Snake Game in React, TypeScript, and Tailwind CSS",
-};
+// have to move to a server component
+// export const metadata = {
+//   title: "Snake Game",
+//   description: "Snake Game in React, TypeScript, and Tailwind CSS",
+// };
 
 const SnakeGame = () => {
   const [snake, setSnake] = useState<Point[]>([
