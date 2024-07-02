@@ -13,7 +13,7 @@ import React, { useState } from "react";
 const RecipePage = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [recipeList, setRecipeList] = useState<Recipe[]>(recipes);
+  const [recipeList, setRecipeList] = useState<Recipe[]>(RecipesList);
 
   const [newRecipeModal, setNewRecipeModal] = useState(false);
   const [title, setTitle] = useState("");
@@ -24,7 +24,7 @@ const RecipePage = () => {
   const [activeRecipe, setActiveRecipe] = useState<number>(-1);
 
   const search = () => {
-    const filteredRecipes = recipes.filter((recipe: Recipe) =>
+    const filteredRecipes = RecipesList.filter((recipe: Recipe) =>
       [recipe.title, recipe.description, ...recipe.ingredients].some((text) => {
         return text.toLowerCase().includes(searchTerm.toLowerCase());
       })
@@ -32,7 +32,7 @@ const RecipePage = () => {
     setRecipeList(filteredRecipes);
 
     if (searchTerm === "") {
-      setRecipeList(recipes);
+      setRecipeList(RecipesList);
     }
   };
 
@@ -169,7 +169,7 @@ const RecipePage = () => {
 
 export default RecipePage;
 
-export const recipes = [
+export const RecipesList = [
   {
     title: "Spaghetti Bolognese",
     image: "https://source.unsplash.com/800x600/?spaghetti",

@@ -79,8 +79,8 @@ const TechnologiesSection = () => {
                   Web Applications
                 </h5>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                  nostrum.
+                  Challenging the normal way of doing things and trying out
+                  different tech stacks and libraries
                 </p>
               </div>
               <a
@@ -118,8 +118,7 @@ const TechnologiesSection = () => {
                   PWAs
                 </h5>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                  nostrum.
+                  Deploying web applications and installable libraries
                 </p>
               </div>
               <a
@@ -157,8 +156,8 @@ const TechnologiesSection = () => {
                   CMS
                 </h5>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Neque Dolor, fugiat non cum doloribus aperiam voluptates
-                  nostrum.
+                  Managing data for websites, apps, blogs etc, as headless cms
+                  or as a fully fledged cms
                 </p>
               </div>
               <a
