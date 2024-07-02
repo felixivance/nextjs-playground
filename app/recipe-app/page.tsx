@@ -1,6 +1,12 @@
 "use client";
 
 import RecipeComponent from "@/components/Recipe/Recipe";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Recipe } from "@/lib";
 import React, { useState } from "react";
 
@@ -54,6 +60,13 @@ const RecipePage = () => {
 
   return (
     <div className="flex min-h-screen flex-col justify-between p-24 space-y-6">
+      <Card>
+        <CardHeader>
+          <CardTitle>Recipe App</CardTitle>
+
+          <CardDescription>Click on an item to view the recipe</CardDescription>
+        </CardHeader>
+      </Card>
       <div className="grid grid-cols-1 md:flex justify-between items-center">
         <div className="flex items-center">
           <input
