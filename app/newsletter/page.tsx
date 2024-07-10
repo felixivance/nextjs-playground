@@ -5,13 +5,10 @@ import React from "react";
 
 type Props = {};
 
-export const siteConfig = {
-  name: "Felix letter",
+export const metadata = {
+  title: "Payground | Felix letter",
   description: "Felix letter a newsletter for dev's made with Nextjs",
-  ogImage: "https://devletter.vercel.app/og-image.png",
-  url: "https://felix-playground.vercel.app/",
 };
-
 const NewsletterPage = (props: Props) => {
   return (
     <main className="flex relative h-screen flex-col items-center justify-between p-20 max-sm:p-4 bg-[#030712]">
