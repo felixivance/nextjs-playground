@@ -9,7 +9,7 @@ export const siteConfig = {
   name: "Felix letter",
   description: "Felix letter a newsletter for dev's made with Nextjs",
   ogImage: "https://devletter.vercel.app/og-image.png",
-  url: "https://devletter.vercel.app/",
+  url: "https://felix-playground.vercel.app/",
 };
 
 const NewsletterPage = (props: Props) => {
