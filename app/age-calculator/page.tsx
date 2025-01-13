@@ -4,8 +4,9 @@ import { Button } from '@/components/ui/button'
 import { Calendar } from '@/components/ui/calendar'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Popover, PopoverContent, PopoverTrigger } from '@radix-ui/react-popover'
-import { set } from 'mongoose';
 import React, { useState } from 'react'
+import { useWindowSize } from 'react-use'
+import Confetti from 'react-confetti'
 
 type Props = {}
 
@@ -19,6 +20,8 @@ const AgeCalculator = (props: Props) => {
   const [birthDate, setBirthDate] = useState<Date>()
   const [age, setAge] = useState<AgeResult | null>(null)
   const today = new Date()
+  const {width, height} = useWindowSize()
+  const [isBirthDayToday, setIsBirthDayToday] = useState(false)
 
   const handleDateSelect = (date: Date | undefined) => {
     setBirthDate(date)
@@ -43,6 +46,11 @@ const AgeCalculator = (props: Props) => {
       const age = {years, months, days}
 
       setAge(age)
+      if(date.getDate() === today.getDate() && date.getMonth() === today.getMonth()){
+        setIsBirthDayToday(true)
+      }else{
+        setIsBirthDayToday(false)
+      }
     }else{
       setAge(null)
     }
@@ -59,9 +67,14 @@ const AgeCalculator = (props: Props) => {
 
   return (
     <div className='flex items-center justify-center p-4  bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen'>
+      {isBirthDayToday && <Confetti width={width} height={height} />}
       <Card className='w-full max-w-xl'>
         <CardHeader>
-        <CardTitle className='text-2xl text-center font-bold'>Age Calculator</CardTitle>
+        <CardTitle className='text-2xl text-center font-bold'>
+          {
+            isBirthDayToday ? 'Happy Birthday To You!' : 'Age Calculator'
+          }
+          </CardTitle>
         <CardDescription className='text-center'>
           <span className='block text-lg font-medium text-primary mt-2'>
           Today is {formatDate(today)}
@@ -116,7 +129,16 @@ const AgeCalculator = (props: Props) => {
                   birthDate && (
                     <div className='text-center text-muted-foreground mt-4 text-sm'>
                       You were born on {formatDate(birthDate)}
+                      
                     </div>
+                  )
+                }
+                {
+                  isBirthDayToday && (
+                    <div className='text-center text-primary mt-4 text-lg font-bold'>
+                      { ` 🎉🎉🎉 And Today is your birthday! 🎉🎉🎉`}
+                    </div>
+                    
                   )
                 }
               </div>
