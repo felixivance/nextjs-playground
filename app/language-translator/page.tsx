@@ -15,7 +15,7 @@ type Translation = {
   timestamp: Date
 }
 
-export default function LanguageLearner() {
+export default function LanguageTranslator() {
   const [inputText, setInputText] = useState("")
   const [translatedText, setTranslatedText] = useState("")
   const [isLoading, setIsLoading] = useState(false)

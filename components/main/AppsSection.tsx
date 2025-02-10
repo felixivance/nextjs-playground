@@ -175,6 +175,32 @@ const AppsSection = (props: Props) => {
               </Link>
             </div>
           </div>
+          <div className="group p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+            <div className="relative overflow-hidden rounded-xl">
+              <Image
+                src="/language-translator.png"
+                alt="art cover"
+                loading="lazy"
+                width="1000"
+                height="667"
+                className="h-64 w-full object-cover object-top transition duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="mt-6 relative">
+              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+                Language Translator
+              </h3>
+              <p className="mt-6 mb-8 text-gray-600 dark:text-gray-300">
+               Challenge to make a language translator. 
+               <small> For now it is any language to German</small>
+              </p>
+              <Link className="inline-block" href="/language-translator">
+                <span className="text-home_primary dark:text-blue-300">
+                  View App
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>
